@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@tailwind utilities;
