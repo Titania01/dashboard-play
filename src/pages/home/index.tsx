@@ -2,6 +2,7 @@ import Chart from "../../organism/chart";
 import FeaturedChart from "../../organism/featured";
 import Navbar from "../../organism/navbar";
 import Sidebar from "../../organism/sidebar";
+import Table from "../../organism/table";
 import Widget from "../../organism/widgets";
 import "./home.scss";
 
@@ -23,6 +24,7 @@ const Home = () => {
         </div>
         <div className="listContainer">
           <div className="listTitle">Latest Transanctions</div>
+          <Table />
         </div>
       </div>
     </div>
