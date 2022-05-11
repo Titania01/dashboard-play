@@ -48,6 +48,16 @@ const rows = [
     method: "Cash on Delivery",
     status: "Pending",
   },
+  {
+    id: 2342355,
+    product: "Acer Nitro 5",
+    img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
+    customer: "Harold Carol",
+    date: "1 March",
+    amount: 2000,
+    method: "Cash on Delivery",
+    status: "Approved",
+  },
 ];
 
 const BasicTable = () => {
