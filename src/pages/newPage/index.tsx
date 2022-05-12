@@ -15,7 +15,7 @@ type newScreenProps = {
 };
 
 const NewPage = ({ inputs, title }: newScreenProps) => {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState<FileList | null>();
   return (
     <div className="new">
       <Sidebar />
@@ -27,7 +27,11 @@ const NewPage = ({ inputs, title }: newScreenProps) => {
         <div className="bottom">
           <div className="left">
             <img
-              src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+              src={
+                file
+                  ? URL.createObjectURL([...file][0])
+                  : "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?cs=srgb&dl=pexels-pixabay-262508.jpg&fm=jpg"
+              }
               alt=""
             />
           </div>
@@ -37,7 +41,14 @@ const NewPage = ({ inputs, title }: newScreenProps) => {
                 <label htmlFor="file">
                   image: <DriveFolderUploadOutlinedIcon className="icon" />
                 </label>
-                <input type="file" id="file" className="inputt hidden" />
+                <input
+                  type="file"
+                  id="file"
+                  onChange={({
+                    currentTarget: { files },
+                  }: React.ChangeEvent<HTMLInputElement>) => setFile(files)}
+                  className="inputt hidden"
+                />
               </div>
               {inputs.map((input) => (
                 <div className="formInput" key={input.id}>

@@ -11,12 +11,15 @@ import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">lamadmin</span>
+        <Link to="/">
+          <span className="logo">lamadmin</span>
+        </Link>
       </div>
       <hr />
       <div className="center">
@@ -28,15 +31,19 @@ const Sidebar = () => {
           </div>
           <div>
             <p className="title">LISTS</p>
+            <Link to="/users">
+              <div className="flex items-center p-1 hover:bg-[#ece8ff] cursor-pointer">
+                <PersonOutlineOutlinedIcon className="icon text-[#7451f8]" />
+                <h3>Users</h3>
+              </div>
+            </Link>
+          </div>
+          <Link to="/products">
             <div className="flex items-center p-1 hover:bg-[#ece8ff] cursor-pointer">
-              <PersonOutlineOutlinedIcon className="icon text-[#7451f8]" />
-              <h3>Users</h3>
+              <ProductionQuantityLimitsOutlinedIcon className="icon text-[#7451f8]" />
+              <h3>Products</h3>
             </div>
-          </div>
-          <div className="flex items-center p-1 hover:bg-[#ece8ff] cursor-pointer">
-            <ProductionQuantityLimitsOutlinedIcon className="icon text-[#7451f8]" />
-            <h3>Products</h3>
-          </div>
+          </Link>
           <div className="flex items-center p-1 hover:bg-[#ece8ff] cursor-pointer">
             <SubscriptionsOutlinedIcon className="icon text-[#7451f8]" />
             <h3>Orders</h3>

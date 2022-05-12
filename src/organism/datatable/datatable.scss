@@ -2,6 +2,20 @@
     height: 650px;
     padding: 20px;
 
+    .datatableTitle{
+        @apply w-full text-2xl text-gray-500 mb-3 flex items-center justify-between;
+
+        .link {
+            color: green;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid green;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+
     .cellWithImg {
         display: flex;
         align-items: center;

@@ -31,7 +31,7 @@
         form {
           display: flex;
           flex-wrap: wrap;
-          gap: 50px;
+          gap: 30px;
 
           .formInput {
             width: 40%;
@@ -54,7 +54,6 @@
               padding: 10px;
               font-weight: bold;
               cursor: pointer;
-              margin-top: 10px;
           }
         }
       }
