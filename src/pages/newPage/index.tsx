@@ -1,17 +1,28 @@
 import Navbar from "../../organism/navbar";
 import Sidebar from "../../organism/sidebar";
 import "./newPage.scss";
+import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+import { useState } from "react";
 
-const NewPage = () => {
+type newScreenProps = {
+  inputs: Array<{
+    id?: number;
+    label?: string;
+    type?: string;
+    placeholder?: string;
+  }>;
+  title?: string;
+};
+
+const NewPage = ({ inputs, title }: newScreenProps) => {
+  const [file, setFile] = useState("");
   return (
     <div className="new">
       <Sidebar />
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1 className="font font-medium text-2xl text-gray-400">
-            Add New User
-          </h1>
+          <h1 className="font font-medium text-2xl text-gray-400">{title}</h1>
         </div>
         <div className="bottom">
           <div className="left">
@@ -23,46 +34,23 @@ const NewPage = () => {
           <div className="right">
             <form>
               <div className="formInput">
-                <label>Username</label>
-                <input type="text" placeholder="john_doe" className="inputt" />
+                <label htmlFor="file">
+                  image: <DriveFolderUploadOutlinedIcon className="icon" />
+                </label>
+                <input type="file" id="file" className="inputt hidden" />
               </div>
-              <div className="formInput">
-                <label>Name and Surname</label>
-                <input type="text" placeholder="John Doe" className="inputt" />
-              </div>
-              <div className="formInput">
-                <label>Email</label>
-                <input
-                  type="email"
-                  placeholder="john_doe@gmail.com"
-                  className="inputt"
-                />
-              </div>
-              <div className="formInput">
-                <label>Phone</label>
-                <input
-                  type="text"
-                  placeholder="+234 843 6755"
-                  className="inputt"
-                />
-              </div>
-              <div className="formInput">
-                <label>Password</label>
-                <input type="password" className="inputt" />
-              </div>
-              <div className="formInput">
-                <label>Address</label>
-                <input
-                  type="text"
-                  className="inputt"
-                  placeholder="Elon St. 216 Newyork"
-                />
-              </div>
-              <div className="formInput">
-                <label>Country</label>
-                <input type="password" className="inputt" placeholder="USA" />
-              </div>
-              <button className="bg-red-400 p-1 rounded-md">send</button>
+              {inputs.map((input) => (
+                <div className="formInput" key={input.id}>
+                  <label>{input.label}</label>
+                  <input
+                    type={input.type}
+                    className="inputt"
+                    placeholder={input.placeholder}
+                  />
+                </div>
+              ))}
+              <br />
+              <button>send</button>
             </form>
           </div>
         </div>
