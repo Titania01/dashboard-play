@@ -33,5 +33,28 @@
                 color: #999;
             }
         }
+
+        hr{
+            border-color: #333;
+        }
+
+       .icon{
+           color: #999;
+       }  
+    }
+
+    .datatable {
+        .datagrid {
+            color: gray;
+            border: none;
+
+            .viewButton, .deleteButton, .cellWithStatus {
+                color: gray;
+            }
+        }
+    }
+
+    input{
+        background-color: transparent;
     }
 }
