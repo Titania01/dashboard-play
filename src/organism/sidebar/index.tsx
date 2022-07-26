@@ -52,7 +52,7 @@ const Sidebar = () => {
             <SubscriptionsOutlinedIcon className="icon text-[#7451f8]" />
             <h3>Orders</h3>
           </div>
-          <div className="flex items-center p-1 hover:bg-[#ece8ff] cursor-auto">
+          <div className="flex items-center p-1 hover:bg-[#ece8ff] cursor-pointer">
             <LocalShippingOutlinedIcon className="icon text-[#7451f8]" />
             <h3>Delivery</h3>
           </div>
